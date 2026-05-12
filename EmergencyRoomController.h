@@ -9,7 +9,7 @@ public:
   void addPatient(const Patient &patient);
   void treatPatient();
   Patient nextPatient();
-  void updatePatientSeverity(int patientId, Severity newSeverity);
+  void updatePatientSeverity(int patientId, int newSeverity);
   void printWaitingPatients() const;
   int countPatients() const;
 };
