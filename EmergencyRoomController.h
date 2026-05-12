@@ -1,5 +1,6 @@
 #include "Heap.h"
 #include "Patient.h"
+#include <iostream>
 
 class EmergencyRoomController {
 private:

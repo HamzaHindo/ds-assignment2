@@ -21,15 +21,36 @@ Patient EmergencyRoomController::nextPatient() {
 
 void EmergencyRoomController::updatePatientSeverity(int patientId,
                                                     int newSeverity) {
-  throw std::runtime_error("Implementation missing `void "
-                           "EmergencyRoomController::updatePatientSeverity(int "
-                           "patientId, Severity newSeverity)`");
+  std::vector<Patient> temp;
+  Patient target;
+  bool found = false;
+
+  while (!patientHeap.isEmpty()) {
+    Patient current = patientHeap.extract();
+    if (current.id == patientId) {
+      current.severity = newSeverity;
+      target = current;
+      found = true;
+    } else {
+      temp.push_back(current);
+    }
+  }
+
+  if (found) {
+    temp.push_back(target);
+    for (const auto &patient : temp) {
+      patientHeap.insert(patient);
+    }
+  }
 }
 
 void EmergencyRoomController::printWaitingPatients() const {
-  throw std::runtime_error("Implementation missing `void "
-                           "EmergencyRoomController::printWaitingPatients() "
-                           "const`");
+  std::cout << "ID | Name      | Severity | Arrival Time" << std::endl;
+  std::cout << "---+-----------+----------+--------------" << std::endl;
+  const auto &patients = patientHeap.getData();
+  for (const auto &patient : patients) {
+    std::cout << patient << std::endl;
+  }
 }
 
 int EmergencyRoomController::countPatients() const {
