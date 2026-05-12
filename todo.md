@@ -1,10 +1,6 @@
 # Project TODO: Emergency Room Priority System (Heap)
 
 ## Overview
-This project implements a hospital emergency room priority queue using a **custom max-heap** with `std::vector`. Patients are prioritized by:
-1. **Higher severity first** (DESC)
-2. **Earlier arrival first** (ASC) — tiebreaker
-
 ## ✅ Already Done
 - [x] `Heap.h` — Template class **declared** (constructor, insert, extract, peek, isEmpty, size, heapifyUp/Down, swap)
 - [x] `EmergencyRoomController.h` — All method signatures declared
