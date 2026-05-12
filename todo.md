@@ -32,18 +32,7 @@
 
 ---
 
-### 2. Fix Patient Comparator / Severity Range
-**Priority: HIGH**
-- Current `Severity` enum goes from `Low=1` to `High=5`
-- Assignment requires **severity 1–10** → consider changing `Severity` to `int` or extending the enum
-- Fix `PatientComparator` (in `Patient.h`) to match required priority:
-  - **Primary:** Higher `severity` first (max-heap behavior)
-  - **Secondary:** Lower `arrivalTime` first (tiebreaker)
-- Ensure comparator is used correctly inside `Heap<T>` (or make `Heap` accept a comparator template parameter)
-
----
-
-### 3. Finish EmergencyRoomController (`EmergencyRoomController.cpp`)
+### 2. Finish EmergencyRoomController (`EmergencyRoomController.cpp`)
 **Priority: HIGH**
 - [ ] `updatePatientSeverity(int patientId, Severity newSeverity)`
   - Find patient by `id` inside `Heap<Patient>`

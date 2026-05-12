@@ -4,9 +4,9 @@
 int main() {
   EmergencyRoomController erc;
 
-  erc.addPatient({1, "Alice", Medium, 10});
-  erc.addPatient({2, "Bob", High, 5});
-  erc.addPatient({3, "Charlie", Low, 15});
+  erc.addPatient({1, "Alice", 5, 10});
+  erc.addPatient({2, "Bob", 8, 5});
+  erc.addPatient({3, "Charlie", 2, 15});
 
   std::cout << "All waiting patients:" << std::endl;
   erc.printWaitingPatients();
@@ -17,7 +17,7 @@ int main() {
   std::cout << "Next patient to treat after treating one: "
             << erc.nextPatient().name << std::endl;
 
-  erc.updatePatientSeverity(3, High);
+  erc.updatePatientSeverity(3, 7);
   std::cout << "Next patient to treat after updating severity: "
             << erc.nextPatient().name << std::endl;
 
