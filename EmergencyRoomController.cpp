@@ -20,7 +20,7 @@ Patient EmergencyRoomController::nextPatient() {
 }
 
 void EmergencyRoomController::updatePatientSeverity(int patientId,
-                                                    Severity newSeverity) {
+                                                    int newSeverity) {
   throw std::runtime_error("Implementation missing `void "
                            "EmergencyRoomController::updatePatientSeverity(int "
                            "patientId, Severity newSeverity)`");
